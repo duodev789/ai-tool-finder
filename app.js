@@ -82,8 +82,21 @@ fetch('data.json')
     renderTools();
   });
 
+const clearBtn = document.getElementById('clear-search');
 searchInput.addEventListener('input', e => {
   renderCategories(e.target.value);
+  if (clearBtn) {
+    clearBtn.style.display = e.target.value ? 'flex' : 'none';
+  }
 });
+
+if (clearBtn) {
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearBtn.style.display = 'none';
+    searchInput.focus();
+    renderCategories('');
+  });
+}
 
 document.getElementById('year').textContent = new Date().getFullYear();
