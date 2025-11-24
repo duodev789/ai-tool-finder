@@ -13,7 +13,10 @@
     
       <h1>AI Tool Finder</h1>
     </header>
-    <input type="text" id="search" placeholder="Search categories..." />
+    <div class="searchbar-wrap">
+      <input type="text" id="search" placeholder="Search categories..." autocomplete="off" />
+      <button id="clear-search" title="Clear search" style="display:none" tabindex="-1">&#10005;</button>
+    </div>
     <div id="categories" class="categories"></div>
     <div id="tools" class="tools"></div>
   </div>
